@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@turbo-buildy/ui": ["packages/ui/src"],
+      "@turbo-buildy/ui/*": ["packages/ui/src/*"],
+      "@web": ["apps/web/src"],
+      "@web/*": ["apps/web/src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+} 

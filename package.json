@@ -1,0 +1,29 @@
+{
+  "name": "turbo-buildy",
+  "description": "Next.js Shadcn/UI Monorepo Starter with PNPM",
+  "version": "0.0.1",
+  "author": "AlexY-OS",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "pnpm --filter @turbo-buildy/web dev",
+    "build": "pnpm run build:apps",
+    "start": "pnpm run start:apps",
+    "build:packages": "pnpm --filter @turbo-buildy/ui build",
+    "build:apps": "pnpm --filter @turbo-buildy/web build",
+    "start:apps": "pnpm --filter @turbo-buildy/web start",
+    "lint": "pnpm --filter @turbo-buildy/web lint",
+    "ui:init": "pnpm dlx shadcn-ui@latest init --cwd packages/ui",
+    "shadcn:add": "pnpm dlx shadcn-ui@latest add --cwd packages/ui",
+    "ui:add": "bash scripts/replaceImport/add-components.sh",
+    "clean": "rm -rf node_modules",
+    "clean:all": "rm -rf node_modules **/node_modules"
+  },
+  "devDependencies": {
+    "glob": "^11.0.1"
+  }
+}
